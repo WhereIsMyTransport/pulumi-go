@@ -30,5 +30,7 @@ pulumi-go preview -s preprod
 
 ## Future work
 
+This is very alpha. Some future work to consider:
+
  - Be explicit about the version of Azure CLI to install
  - Support for other backend types and cloud providers
