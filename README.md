@@ -10,7 +10,7 @@ Any Pulumi commands and arguments can be specified and executed, however it is l
 
 The container requires the following environment variable settings:
  - Pulumi backend details and credentials (PULUMI_BACKEND, AZURE_STORAGE_ACCOUNT, AZURE_STORAGE_KEY, PULUMI_CONFIG_PASSPHRASE)
-  - Azure service principal credentials (ARM_CLIENT_ID, ARM_CLIENT_SECRET, ARM_TENANT_ID, ARM_SUBSCRIPTION_ID)
+  - Azure service principal credentials (ARM_CLIENT_ID, ARM_CLIENT_SECRET, ARM_TENANT_ID, ARM_SUBSCRIPTION_ID).  See [here](https://www.pulumi.com/docs/intro/cloud-providers/azure/setup/#service-principal-authentication).
 
 For example, running the equivalent of `pulumi preview -s preprod`:
 
