@@ -27,3 +27,8 @@ docker run --rm -it `
 -e ARM_SUBSCRIPTION_ID="bc11037b-06b4-4279-aab3-6ad4688a29f6" `
 pulumi-go preview -s preprod
 ```
+
+## Future work
+
+ - Be explicit about the version of Azure CLI to install
+ - Support for other backend types and cloud providers
