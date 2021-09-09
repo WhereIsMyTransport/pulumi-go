@@ -10,12 +10,12 @@ RUN curl -fsSL https://get.pulumi.com | sh -s -- --version "3.12.0"
 ENV PATH "$PATH:/root/.pulumi/bin"
 RUN pulumi version
 
-# Copy contents into image.
-# This should be mountable which would make this image reusable across projects.
-#COPY ./DataTools.Aks ./
+ADD ./src/pulumi-go.sh ./pulumi-go.sh
 
 # Make script executable.
-RUN chmod +x src/pulumi-go.sh
+RUN chmod +x pulumi-go.sh
+
+WORKDIR /
 
 # Using the exec form of ENTRYPOINT to allow passing in of Pulumi arguments via docker run.
-ENTRYPOINT ["./src/pulumi-go.sh"]
+ENTRYPOINT ["./app/pulumi-go.sh"]
