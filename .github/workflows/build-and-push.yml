@@ -2,7 +2,7 @@ on:
   push:
     branches:
       - main
-      - ci
+      - improved-logging
 
 name: Build and Push Docker Image
 

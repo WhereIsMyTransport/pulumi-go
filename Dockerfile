@@ -1,3 +1,5 @@
+# docker build -t pulumi-go:alpha .
+
 FROM mcr.microsoft.com/dotnet/sdk:5.0 AS builder
 WORKDIR /app
 
