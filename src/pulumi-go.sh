@@ -4,16 +4,13 @@
 cd project
 
 # Hello!
-echo
-echo Running pulumi-go!
-echo ==================
-echo Pulumi command: $@
-echo Current path: $(pwd -P)
-echo Dir contents: $(ls)
-echo
-
-# Commands printed to terminal.
-set -x
+echo ╔════════════════════>
+echo ║ Running pulumi-go!
+echo ╠════════════════════>
+echo ║ Pulumi command: $@
+echo ║ Current path: $(pwd -P)
+echo ║ Dir contents: $(ls)
+echo ╚════════════════════>
 
 # Login to Pulumi backend. 
 # Requires AZURE_STORAGE_ACCOUNT, AZURE_STORAGE_KEY and PULUMI_CONFIG_PASSPHRASE env variables for Azure storage.
