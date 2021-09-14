@@ -25,8 +25,17 @@ docker run --rm -it `
 -e ARM_CLIENT_SECRET="{secret}" `
 -e ARM_TENANT_ID="96c25cb6-0b7b-4ca9-885a-685f0168d0cb" `
 -e ARM_SUBSCRIPTION_ID="bc11037b-06b4-4279-aab3-6ad4688a29f6" `
-pulumi-go preview -s preprod
+whereismytransport.azurecr.io/pulumi-go:latest `
+preview -s preprod
 ```
+
+## Log in to ACR
+
+To use this locally you will first need to log in to our Azure Container Registry.  Follow these steps:
+
+  1. `az login` to authenticate the Azure CLI with your user account.
+  2. `az acr login -n whereismytransport` to authenticate with our ACR.
+  3. `docker pull whereismytransport.azurecr.io/pulumi-go:latest` to pull the latest pulumi-go image.
 
 ## Future work
 
