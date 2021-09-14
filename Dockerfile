@@ -1,3 +1,6 @@
+# docker build -t pulumi-go:latest .
+# docker run --rm -it --mount type=bind,source="$(pwd)",target=/project -e PULUMI_BACKEND="azblob://pulumi" -e AZURE_STORAGE_ACCOUNT="datatoolsstates" -e AZURE_STORAGE_KEY="{secret}" -e PULUMI_CONFIG_PASSPHRASE="{secret}" -e ARM_CLIENT_ID="653ff6aa-6e8a-440f-9cba-5f3f173b6927" -e ARM_CLIENT_SECRET="{secret}" -e ARM_TENANT_ID="96c25cb6-0b7b-4ca9-885a-685f0168d0cb" -e ARM_SUBSCRIPTION_ID="bc11037b-06b4-4279-aab3-6ad4688a29f6" whereismytransport.azurecr.io/pulumi-go:latest preview -s preprod
+
 FROM mcr.microsoft.com/dotnet/sdk:5.0 AS builder
 WORKDIR /app
 
