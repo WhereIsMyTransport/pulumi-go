@@ -4,13 +4,13 @@ Run your Pulumi commands in Docker for .NET 5.0 projects that deploy to Azure Cl
 
 ## Instructions
 
-Run the Docker container in your Pulumi project root directory (i.e. where the Pulumi.yaml is located).  This will mount the Pulumi project in the container.
+Run the Docker container with the Pulumi project root directory (i.e. where the Pulumi.yaml is located) mounted using the `--mount` argument.  See example further below.  Otherwise you can run the container from the path of your project and provide `$(pwd)` as the source binding - this will mount the Pulumi project into the container.
 
 Any Pulumi commands and arguments can be specified and executed, however it is limited to a single command.  This means that you cannot chain together consecutive Pulumi commands.  For example, running `pulumi stack select preprod` and then `pulumi up` will not work because the commands are run in two separate sessions.  However, using the example, the same outcome can be achieved using the single command `pulumi up -s preprod`.
 
 The container requires the following environment variable settings:
- - Pulumi backend details and credentials (PULUMI_BACKEND, AZURE_STORAGE_ACCOUNT, AZURE_STORAGE_KEY, PULUMI_CONFIG_PASSPHRASE)
-  - Azure service principal credentials (ARM_CLIENT_ID, ARM_CLIENT_SECRET, ARM_TENANT_ID, ARM_SUBSCRIPTION_ID).  See [here](https://www.pulumi.com/docs/intro/cloud-providers/azure/setup/#service-principal-authentication).
+ - The Pulumi backend credentials (PULUMI_BACKEND, AZURE_STORAGE_ACCOUNT, AZURE_STORAGE_KEY, PULUMI_CONFIG_PASSPHRASE).  See more [here](https://www.pulumi.com/docs/intro/concepts/state/#logging-into-the-azure-blob-storage-backend).
+ - Azure service principal credentials (ARM_CLIENT_ID, ARM_CLIENT_SECRET, ARM_TENANT_ID, ARM_SUBSCRIPTION_ID) with the relevant access right to services in the subscription. See [here](https://www.pulumi.com/docs/intro/cloud-providers/azure/setup/#service-principal-authentication).
 
 For example, running the equivalent of `pulumi preview -s preprod`:
 
@@ -32,5 +32,6 @@ pulumi-go preview -s preprod
 
 This is very alpha. Some future work to consider:
 
+ - Reduce the size of the image.  It's currently sitting at 1.9GB.
  - Be explicit about the version of Azure CLI to install
  - Support for other backend types and cloud providers
