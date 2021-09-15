@@ -20,4 +20,4 @@ pulumi login $PULUMI_BACKEND --non-interactive --color never --logtostderr
 # These provide Azure privileges by service principal - https://www.pulumi.com/docs/intro/cloud-providers/azure/setup/#service-principal-authentication
 pulumi $@ --non-interactive --color never --logtostderr
 
-# Note: pulumi does not use standard exit codes so using stderr is necessary
+# Note: pulumi does not use standard exit codes so using stderr is necessary. 
