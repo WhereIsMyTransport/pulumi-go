@@ -2,11 +2,13 @@
 
 # Go to Pulumi project directory (mounted at runtime).
 cd project
+cd "$PULUMI_TARGET"
 
 # Hello!
 echo ╔════════════════════╗
 echo ║ Running pulumi-go! ║
 echo ╚════════════════════╝
+# Find command
 echo Pulumi command: $@
 echo Current path: $(pwd -P)
 echo Dir contents: $(ls)
