@@ -8,11 +8,10 @@ cd "$PULUMI_TARGET"
 echo ╔════════════════════╗
 echo ║ Running pulumi-go! ║
 echo ╚════════════════════╝
-# Find command - all args except directory
+# Find command
 echo Pulumi command: $@
 echo Current path: $(pwd -P)
 echo Dir contents: $(ls)
-
 
 # Login to Pulumi backend. 
 # Requires AZURE_STORAGE_ACCOUNT, AZURE_STORAGE_KEY and PULUMI_CONFIG_PASSPHRASE env variables for Azure storage.
